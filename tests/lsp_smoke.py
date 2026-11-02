@@ -67,6 +67,10 @@ def main() -> None:
                     message = messages.get(timeout=max(0.01, deadline - time.monotonic()))
                     if isinstance(message, Exception):
                         raise message
+                    if message.get('method') in ('window/showMessage', 'window/logMessage'):
+                        notice = message['params']
+                        if notice.get('type', 4) <= 2:
+                            raise RuntimeError(f"Language server reported: {notice['message']}")
                     if 'method' in message and 'id' in message:
                         reply = json.dumps({'jsonrpc': '2.0', 'id': message['id'], 'result': None}).encode()
                         process.stdin.write(f'Content-Length: {len(reply)}\r\n\r\n'.encode() + reply)

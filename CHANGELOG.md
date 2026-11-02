@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+
+- Use `defaultlib` in project examples because VHDL LS rejects the reserved `work` library name.
+- Fail real-server smoke checks on configuration errors and warning notifications, which previously went unnoticed.
+
 ## [0.1.0] - 2026-11-02
 
 ### Added

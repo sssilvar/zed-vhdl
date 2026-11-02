@@ -40,8 +40,10 @@ standard = "2008"
 preferred_case = "lower"
 
 [libraries]
-work.files = ["rtl/**/*.vhd", "sim/**/*.vhd"]
+defaultlib.files = ["rtl/**/*.vhd", "sim/**/*.vhd"]
 ```
+
+`work` is VHDL’s alias for the current working library, not a valid configured library name in VHDL LS. Use `defaultlib` (or another concrete library name); references such as `entity work.blinker` remain unchanged.
 
 Add each design library under `[libraries]`, using paths relative to this file. IEEE and std libraries ship with the official server. See the [VHDL LS configuration reference](https://github.com/VHDL-LS/rust_hdl#configuration) for external libraries and diagnostic settings. The small `examples/blinker` project is ready to open directly.
 

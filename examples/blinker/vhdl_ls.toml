@@ -1,0 +1,4 @@
+standard = "2008"
+preferred_case = "lower"
+[libraries]
+work.files = ["*.vhd"]

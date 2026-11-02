@@ -1,0 +1,19 @@
+id = "vhdl"
+name = "VHDL"
+version = "0.1.0"
+schema_version = 1
+authors = ["sssilvar"]
+description = "VHDL parsing, completion, diagnostics and navigation using VHDL LS."
+repository = "https://github.com/sssilvar/zed-vhdl"
+snippets = "snippets/vhdl.json"
+
+[language_servers.vhdl_ls]
+name = "VHDL LS"
+languages = ["VHDL"]
+
+[language_servers.vhdl_ls.language_ids]
+VHDL = "vhdl"
+
+[grammars.vhdl]
+repository = "https://github.com/alemuller/tree-sitter-vhdl"
+rev = "a3b2d84990527c7f8f4ae219c332c00c33d2d8e5"

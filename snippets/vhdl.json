@@ -1,0 +1,6 @@
+{
+  "IEEE libraries": {"prefix": "ieee", "body": ["library ieee;", "use ieee.std_logic_1164.all;", "use ieee.numeric_std.all;", "$0"], "description": "Standard logic and numeric types"},
+  "Entity and architecture": {"prefix": "entity", "body": ["entity ${1:top} is", "  port (", "    clk : in std_logic;", "    ${2:led} : out std_logic", "  );", "end entity;", "", "architecture rtl of $1 is", "begin", "  $0", "end architecture;"], "description": "VHDL entity with RTL architecture"},
+  "Clocked process": {"prefix": "clocked", "body": ["${1:registers} : process (${2:clk})", "begin", "  if rising_edge($2) then", "    $0", "  end if;", "end process;"], "description": "Rising-edge register process"},
+  "Combinational process": {"prefix": "comb", "body": ["${1:combinational} : process (all)", "begin", "  $0", "end process;"], "description": "VHDL-2008 combinational process"}
+}
